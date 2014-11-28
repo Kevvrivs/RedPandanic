@@ -4,6 +4,7 @@ public class Item {
 
 	private String id;
 	private String itemName;
+	private double cost;
 	private double quantity;
 	private int importance;
 
@@ -39,5 +40,14 @@ public class Item {
 	public void setImportance(int importance) {
 		this.importance = importance;
 	}
+
+	public double getCost() {
+		return cost;
+	}
+
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	
 
 }

@@ -18,7 +18,6 @@ import android.widget.EditText;
 
 public class RegisterActivity extends Activity{
 	private MobileServiceClient mClient;
-	private DbConnection dbConnection;
 	private EditText txtUsername;
 	private EditText txtPassword;
 	private EditText txtConfirmPassword;
@@ -31,8 +30,7 @@ public class RegisterActivity extends Activity{
 		setContentView(R.layout.activity_register);
 		
 		//Initialize Connections
-		dbConnection = new DbConnection();
-		mClient = dbConnection.connectToAzure(this);
+		mClient = DbConnection.connectToAzureService(this);
 		txtUsername = (EditText)findViewById(R.id.reguserText);
 		txtPassword = (EditText)findViewById(R.id.regpassText);
 		txtConfirmPassword = (EditText) findViewById(R.id.confpassText);
