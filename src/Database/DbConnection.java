@@ -11,7 +11,7 @@ public class DbConnection {
 	private MobileServiceClient mClient;
 
 	
-	public MobileServiceClient DbConnect(Context context){
+	public MobileServiceClient connectToAzure(Context context){
 		String url = "https://redpandanic.azure-mobile.net/";
 		String secret =  "bPMwoAaNznctNZORRuuNaUCioqHEsQ49";
 		try {
