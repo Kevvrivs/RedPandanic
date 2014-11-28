@@ -6,7 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
@@ -55,20 +59,21 @@ public class ItemRecommenderActivity extends Activity {
 			// TODO Auto-generated method stub
 			Log.e("Money", txtQuantity.getText().toString());
 			Double money = Double.valueOf(txtQuantity.getText().toString());
-			
-
-			List<Item> recommend = recommendItems(money,4);
-			for(Item i: recommend){
-				adapter.add(i);
-			}			
+		
+			HashMap<String,Item> recommend = recommendItems(money,4);
+			Set<Entry<String,Item>> itSet = recommend.entrySet();	
+			for(Entry<String,Item> item: itSet){
+				adapter.add(item.getValue());
+			}
 		}
 		
-		public List<Item> recommendItems(double money, int numOfMember){
+		public HashMap<String,Item> recommendItems(double money, int numOfMember){
 			double budget = money;
 			int day = 1;
 			ItemTable table = new ItemTable();
 			List<Item> items = table.getListItems();
-			List<Item> recommend = new ArrayList<Item>();
+			HashMap<String, Item> recommend = new HashMap<String, Item>();
+			
 			boolean isBuy = false;
 			while(budget > 0 && !isBuy){
 				isBuy = false;
@@ -76,16 +81,21 @@ public class ItemRecommenderActivity extends Activity {
 					if(item.getImportance() == 2){
 						if(day < 2){
 							if(budget-(item.getCost()*numOfMember) >= 0){
-								
 								budget -= item.getCost()*numOfMember;
-								recommend.add(item);
+								recommend.put(item.getItemName(), item);
 								isBuy = true;
 							} 
 						} 
 					} else {
 						if(budget-(item.getCost()*numOfMember) >= 0){
 							budget -= item.getCost()*numOfMember;
-							recommend.add(item);
+							Item r = null;
+							if((r = recommend.get(item.getItemName())) != null){
+								r.setQuantity(r.getQuantity()+item.getQuantity());
+								recommend.put(r.getItemName(), r);
+							} else {
+								recommend.put(item.getItemName(),item);
+							}
 							isBuy = true;
 						} 
 					}
