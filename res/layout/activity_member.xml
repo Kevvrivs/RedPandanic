@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayoutMenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@drawable/pengu"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/txtUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/borderbase"
+        android:hint="@string/enteruser"
+         android:textSize="30dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_marginTop="9dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#15CAB1"
+         android:textSize="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/addmember" />
+
+    <ListView
+        android:id="@+id/listMember"
+        android:background="@drawable/borderbase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_marginTop="9dp">
+    </ListView>
+
+</LinearLayout>
