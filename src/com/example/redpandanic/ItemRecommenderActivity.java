@@ -75,6 +75,7 @@ public class ItemRecommenderActivity extends Activity {
 					if(item.getImportance() == 2){
 						if(day < 2){
 							if(budget-(item.getCost()*numOfMember) >= 0){
+								
 								budget -= item.getCost()*numOfMember;
 								recommend.add(item);
 								isBuy = true;
