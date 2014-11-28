@@ -21,7 +21,6 @@ import android.widget.ListView;
 
 public class ToDoListActivity extends Activity{
 	private MobileServiceClient mClient;
-	private DbConnection dbConnection;
 	private EditText description;
 	private Button btnAdd;
 	private WorkListAdapter adapter;
@@ -31,8 +30,7 @@ public class ToDoListActivity extends Activity{
 		setContentView(R.layout.activity_to_do_list);
 		
 		//Initialize Connections
-		dbConnection = new DbConnection();
-		mClient = dbConnection.connectToAzure(this);
+		mClient = DbConnection.connectToAzureService(this);
 		description = (EditText)findViewById(R.id.text);
 		btnAdd = (Button)findViewById(R.id.btnAdd);
 		

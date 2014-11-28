@@ -18,79 +18,79 @@ import Support.ItemTable;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 
 public class ItemRecommenderActivity extends Activity {
 	private MobileServiceClient mClient;
-
+	private ItemAdapter adapter;
+	private ListView listItems;
+	private EditText txtQuantity;
+	private Button btnEdit;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checklist);
 		mClient = DbConnection.connectToAzureService(this);
-		//addItem();
-		List<Item> recommend = recommendItems(2000,4);
-		double sum = 0;
+		btnEdit = (Button) findViewById(R.id.btnAdd);
+		btnEdit.setOnClickListener(new RecommendListener());
+		txtQuantity = (EditText) findViewById(R.id.textQuantity);
+		adapter = new ItemAdapter(this,R.layout.layout_rowitem);
 		
-		for(Item i: recommend){
-			//Log.e(i.getItemName(), Double.toString(i.getCost()));
-			sum += i.getCost();
-		}
+		listItems = (ListView) findViewById(R.id.listItem);
+		listItems.setAdapter(adapter);
 		
-		//Log.e("Sum", Double.toString(sum));
 
+	
 	}
 
-	public List<Item> recommendItems(double money, int numOfMember){
-		double budget = money;
-		int day = 1;
-		ItemTable table = new ItemTable();
-		List<Item> items = table.getListItems();
-		List<Item> recommend = new ArrayList<Item>();
-		boolean isBuy = false;
-		while(budget > 0 && !isBuy){
-			isBuy = false;
-			for(Item item: items){
-				if(item.getImportance() == 2){
-					if(day < 2){
+	
+	class RecommendListener implements OnClickListener {
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Double money = Double.valueOf(btnEdit.getText().toString());
+			List<Item> recommend = recommendItems(money,4);
+			for(Item i: recommend){
+				adapter.add(i);
+			}			
+		}
+		
+		public List<Item> recommendItems(double money, int numOfMember){
+			double budget = money;
+			int day = 1;
+			ItemTable table = new ItemTable();
+			List<Item> items = table.getListItems();
+			List<Item> recommend = new ArrayList<Item>();
+			boolean isBuy = false;
+			while(budget > 0 && !isBuy){
+				isBuy = false;
+				for(Item item: items){
+					if(item.getImportance() == 2){
+						if(day < 2){
+							if(budget-(item.getCost()*numOfMember) >= 0){
+								budget -= item.getCost()*numOfMember;
+								recommend.add(item);
+								isBuy = true;
+							} 
+						} 
+					} else {
 						if(budget-(item.getCost()*numOfMember) >= 0){
+							budget -= item.getCost()*numOfMember;
 							recommend.add(item);
 							isBuy = true;
 						} 
-					} 
-				} else {
-					if(budget-(item.getCost()*numOfMember) >= 0){
-						recommend.add(item);
-						isBuy = true;
-					} 
-				}
-			}
-		}
-		return recommend;
-		
-	}
-	public void addItem() {
-
-		Item item = new Item();
-		item.setItemName("Instant Noodles");
-		item.setQuantity(3);
-		item.setCost(7);
-		item.setImportance(1);
-
-		mClient.getTable(Item.class).insert(item,
-				new TableOperationCallback<Item>() {
-
-					@Override
-					public void onCompleted(Item item, Exception exception,
-							ServiceFilterResponse response) {
-						// TODO Auto-generated method stub
-						if (exception == null) {
-							Log.e("Adding Item", "Successful");
-						} else {
-							Log.e("Adding Item", "Failed");
-						}
-
 					}
-
-				});
+				}
+				day++;
+			}
+			return recommend;
+			
+		}
+		
 
 	}
 }
