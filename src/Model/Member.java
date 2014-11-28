@@ -6,8 +6,17 @@ public class Member {
 	private String username;
 	private String password;
 	private String email;
+	private String groupId;
 	
 	
+	public String getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
 	public Member(String memberName,String username,String password, String email){
 		this.memberName = memberName;
 		this.username = username;
