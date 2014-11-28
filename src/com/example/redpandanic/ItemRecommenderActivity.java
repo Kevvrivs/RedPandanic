@@ -36,7 +36,7 @@ public class ItemRecommenderActivity extends Activity {
 		mClient = DbConnection.connectToAzureService(this);
 		btnEdit = (Button) findViewById(R.id.btnAdd);
 		btnEdit.setOnClickListener(new RecommendListener());
-		txtQuantity = (EditText) findViewById(R.id.textQuantity);
+		txtQuantity = (EditText) findViewById(R.id.itemQty);
 		adapter = new ItemAdapter(this,R.layout.layout_rowitem);
 		
 		listItems = (ListView) findViewById(R.id.listItem);
@@ -52,7 +52,10 @@ public class ItemRecommenderActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Double money = Double.valueOf(btnEdit.getText().toString());
+			Log.e("Money", txtQuantity.getText().toString());
+			Double money = Double.valueOf(txtQuantity.getText().toString());
+			
+
 			List<Item> recommend = recommendItems(money,4);
 			for(Item i: recommend){
 				adapter.add(i);
