@@ -18,7 +18,7 @@
         android:hint="@string/desc" />
     
      <ListView
-         android:id="@+id/workList"
+         android:id="@+id/toDoListItem"
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          android:background="@drawable/borderbase"
