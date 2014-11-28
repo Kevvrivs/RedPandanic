@@ -30,6 +30,7 @@ public class ItemRecommenderActivity extends Activity {
 	private ListView listItems;
 	private EditText txtQuantity;
 	private Button btnEdit;
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checklist);
