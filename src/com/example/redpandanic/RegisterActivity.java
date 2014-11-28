@@ -73,7 +73,7 @@ public class RegisterActivity extends Activity{
 					public void onCompleted(Member newMember, Exception exception,
 							ServiceFilterResponse response) {
 						
-						if(exception!=null){
+						if(exception==null){
 							createDialog().show();
 							Log.e("Register", "Success");
 							
@@ -86,6 +86,8 @@ public class RegisterActivity extends Activity{
 						}
 						else{
 							Log.e("Add Member to DB", "Failure");
+							exception.printStackTrace();
+							
 						}
 						
 					}

@@ -1,7 +1,7 @@
 package Model;
 
 public class Member {
-	private String memberId;
+	private String id;
 	private String memberName;
 	private String username;
 	private String password;
@@ -22,13 +22,14 @@ public class Member {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.groupId = "a";
 	}
 	
 	public String getMemberId() {
-		return memberId;
+		return id;
 	}
 	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+		this.id = memberId;
 	}
 	public String getMemberName() {
 		return memberName;
