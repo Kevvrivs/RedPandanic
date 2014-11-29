@@ -9,6 +9,7 @@ import Model.Member;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -78,11 +79,11 @@ public class RegisterActivity extends Activity{
 							Log.e("Register", "Success");
 							
 							//Go to next activity
-							/*
-							Intent i = new Intent(getApplicationContext(),MenuActivity.class);
-							i.putExtra("user", registerUser);
+						
+							Intent i = new Intent(getApplicationContext(),GroupActivity.class);
+							i.putExtra("user", newMember);
 							startActivity(i);
-							*/
+						
 						}
 						else{
 							Log.e("Add Member to DB", "Failure");

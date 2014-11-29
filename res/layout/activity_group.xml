@@ -8,16 +8,9 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-<<<<<<< HEAD
     android:paddingTop="@dimen/activity_vertical_margin" >
 
     <ImageView
-=======
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical" >
-    
-        <ImageView
->>>>>>> 23174afc58bb264c62de050bb9adb2dc7913b0e0
         android:id="@+id/titleImage"
         android:layout_width="wrap_content"
         android:layout_height="240dp"
@@ -43,69 +36,34 @@
     </EditText>
 
     <RelativeLayout
-<<<<<<< HEAD
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
         <Button
             android:id="@+id/joinButton"
-            android:layout_width="180dp"
+            android:layout_width="130dp"
             android:layout_height="45dp"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="30dp"
             android:background="@drawable/regbox"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/register"
+            android:text="@string/groupJoin"
             android:textColor="#f8ede4"
             android:textSize="18dp" />
 
         <Button
             android:id="@+id/createButton"
-            android:layout_width="80dp"
+            android:layout_width="130dp"
             android:layout_height="45dp"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/creativejoin"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/login"
+            android:text="@string/groupCreate"
             android:textColor="#f8ede4"
             android:textSize="18dp" />
     </RelativeLayout>
-=======
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-        
-    <Button
-        android:id="@+id/joinButton"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/regbox"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/groupJoin"
-        android:textColor="#f8ede4"
-        android:textSize="18dp" />
-    
-    <Button
-        android:id="@+id/createButton"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/creativejoin"
-        android:textSize="18dp"
-      	android:fontFamily="sans-serif-medium"  
-        android:text="@string/groupCreate"
-        android:textColor="#f8ede4" />
-        
-    </RelativeLayout>
-           
-    
->>>>>>> 23174afc58bb264c62de050bb9adb2dc7913b0e0
 
 </LinearLayout>

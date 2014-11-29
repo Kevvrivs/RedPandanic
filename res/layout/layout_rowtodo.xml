@@ -7,7 +7,7 @@
  <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bgrev" >
+        android:background="#f8ede4" >
 
         <CheckBox
             android:id="@+id/checkToDoComplete"

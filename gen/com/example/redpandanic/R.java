@@ -49,45 +49,46 @@ public final class R {
         public static final int roundbutton=0x7f020018;
         public static final int roundcorner=0x7f020019;
         public static final int test=0x7f02001a;
-        public static final int text=0x7f02001b;
-        public static final int unnamed=0x7f02001c;
-        public static final int userface=0x7f02001d;
-        public static final int username=0x7f02001e;
+        public static final int testa=0x7f02001b;
+        public static final int text=0x7f02001c;
+        public static final int unnamed=0x7f02001d;
+        public static final int userface=0x7f02001e;
+        public static final int username=0x7f02001f;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080000;
-        public static final int LinearLayoutGroupAct=0x7f080005;
-        public static final int LinearLayoutMenu=0x7f080010;
+        public static final int LinearLayoutGroupAct=0x7f080004;
+        public static final int LinearLayoutMenu=0x7f08000f;
         public static final int LinearLayoutRegister=0x7f08001d;
-        public static final int Login=0x7f08000f;
+        public static final int Login=0x7f08000e;
         public static final int action_settings=0x7f08002f;
-        public static final int btnAdd=0x7f080003;
+        public static final int btnAdd=0x7f080002;
         public static final int checkIsCompleted=0x7f08002a;
-        public static final int checkMenu=0x7f080015;
+        public static final int checkMenu=0x7f080014;
         public static final int checkToDoComplete=0x7f08002d;
-        public static final int checklistButton=0x7f080014;
+        public static final int checklistButton=0x7f080013;
         public static final int confpassReg=0x7f080024;
         public static final int confpassText=0x7f080025;
-        public static final int createButton=0x7f080009;
-        public static final int disasterButton=0x7f080016;
-        public static final int disasterMenu=0x7f080017;
+        public static final int createButton=0x7f080008;
+        public static final int disasterButton=0x7f080015;
+        public static final int disasterMenu=0x7f080016;
         public static final int emailReg=0x7f080026;
         public static final int emailText=0x7f080027;
-        public static final int inventoryButton=0x7f080018;
-        public static final int inventoryMenu=0x7f080019;
+        public static final int inventoryButton=0x7f080017;
+        public static final int inventoryMenu=0x7f080018;
         public static final int itemName=0x7f080001;
-        public static final int itemQty=0x7f080002;
-        public static final int joinButton=0x7f080008;
-        public static final int listItem=0x7f080004;
-        public static final int listMember=0x7f080011;
+        public static final int joinButton=0x7f080007;
+        public static final int listItem=0x7f080003;
+        public static final int listMember=0x7f080010;
         public static final int logoutButton=0x7f08001c;
-        public static final int memberButton=0x7f08001a;
-        public static final int memberMenu=0x7f08001b;
-        public static final int messageUser=0x7f080013;
+        public static final int memberButton=0x7f080019;
+        public static final int memberMenu=0x7f08001a;
+        public static final int messageUser=0x7f080012;
         public static final int nameReg=0x7f08001e;
-        public static final int passLog=0x7f08000c;
+        public static final int parentGroup=0x7f08001b;
+        public static final int passLog=0x7f08000b;
         public static final int passReg=0x7f080022;
-        public static final int registerButton=0x7f08000e;
+        public static final int registerButton=0x7f08000d;
         public static final int regpassText=0x7f080023;
         public static final int reguserFullName=0x7f08001f;
         public static final int reguserText=0x7f080021;
@@ -95,13 +96,13 @@ public final class R {
         public static final int textDescription=0x7f08002e;
         public static final int textItem=0x7f08002c;
         public static final int textQuantity=0x7f08002b;
-        public static final int titleImage=0x7f080006;
-        public static final int titleLabel=0x7f080012;
+        public static final int titleImage=0x7f080005;
+        public static final int titleLabel=0x7f080011;
         public static final int toDoListItem=0x7f080029;
-        public static final int txtPassword=0x7f08000d;
-        public static final int txtSearchGroup=0x7f080007;
-        public static final int txtUser=0x7f08000b;
-        public static final int userLog=0x7f08000a;
+        public static final int txtPassword=0x7f08000c;
+        public static final int txtSearchGroup=0x7f080006;
+        public static final int txtUser=0x7f08000a;
+        public static final int userLog=0x7f080009;
         public static final int userReg=0x7f080020;
     }
     public static final class layout {
@@ -135,6 +136,8 @@ public final class R {
         public static final int emergency=0x7f050017;
         public static final int enteruser=0x7f05001c;
         public static final int facebook_app_id=0x7f050009;
+        public static final int groupCreate=0x7f050020;
+        public static final int groupJoin=0x7f05001f;
         public static final int hello_world=0x7f050001;
         public static final int inventory=0x7f050015;
         public static final int itemname=0x7f050006;
@@ -153,6 +156,7 @@ public final class R {
         public static final int title_activity_menu=0x7f050018;
         public static final int title_activity_register=0x7f050012;
         public static final int title_activity_to_do_list=0x7f05000c;
+        public static final int txtSearchGroup=0x7f05001e;
         public static final int username=0x7f050003;
     }
     public static final class style {

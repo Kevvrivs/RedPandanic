@@ -69,12 +69,14 @@ public class LoginActivity extends Activity {
 								//Go to...
 								Log.e("WHERE","GO TO GROUP PAGE");
 								Intent i = new Intent(getApplicationContext(),GroupActivity.class);
+								i.putExtra("user", mem);
 								startActivity(i);
 							}
 							else{
 								//Do something else
 								Log.e("WHERE","GO TO HOME");
 								Intent i = new Intent(getApplicationContext(),MenuActivity.class);
+								i.putExtra("user", mem);
 								startActivity(i);
 							}
 						}

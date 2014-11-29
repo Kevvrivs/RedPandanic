@@ -1,7 +1,7 @@
 package Model;
 
 public class WorkItem {
-	private String workId;
+	private String id;
 	private String description;
 	private String memberId;
 	private String groupId;
@@ -9,10 +9,10 @@ public class WorkItem {
 	
 	
 	public String getWorkId() {
-		return workId;
+		return id;
 	}
 	public void setWorkId(String workId) {
-		this.workId = workId;
+		this.id = workId;
 	}
 	public String getDescription() {
 		return description;

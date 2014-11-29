@@ -9,6 +9,7 @@ import Database.DbConnection;
 import Model.Member;
 import Model.WorkItem;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -24,16 +25,17 @@ public class ToDoListActivity extends Activity{
 	private EditText description;
 	private Button btnAdd;
 	private WorkListAdapter adapter;
-	
+	private Member member;
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_to_do_list);
-		
+		Intent i = getIntent();
+		member = (Member) i.getSerializableExtra("user");
 		//Initialize Connections
 		mClient = DbConnection.connectToAzureService(this);
 		description = (EditText)findViewById(R.id.text);
 		btnAdd = (Button)findViewById(R.id.btnAdd);
-		
+		btnAdd.setOnClickListener(new AddListListener());
 		adapter = new WorkListAdapter(this,R.layout.layout_rowtodo);
 		
 		ListView WorkList = (ListView) findViewById(R.id.toDoListItem);
@@ -65,7 +67,8 @@ public class ToDoListActivity extends Activity{
 			WorkItem work = new WorkItem();
 			work.setDescription(desc);
 			work.setDone(false);
-			
+			work.setGroupId(member.getGroupId());
+			work.setMemberId("null");
 			mClient.getTable(WorkItem.class).insert(work,new TableOperationCallback<WorkItem>() {
 
 				@Override
@@ -76,6 +79,7 @@ public class ToDoListActivity extends Activity{
 						adapter.add(item);
 					} else {
 						Log.e("Add Work Item", "Failure");
+						exception.printStackTrace();
 					}
 				}
 			});

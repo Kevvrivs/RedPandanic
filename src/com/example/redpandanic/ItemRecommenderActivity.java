@@ -42,7 +42,7 @@ public class ItemRecommenderActivity extends Activity {
 		mClient = DbConnection.connectToAzureService(this);
 		btnEdit = (Button) findViewById(R.id.btnAdd);
 		btnEdit.setOnClickListener(new RecommendListener());
-		txtQuantity = (EditText) findViewById(R.id.itemQty);
+		txtQuantity = (EditText) findViewById(R.id.itemName);
 		adapter = new ItemAdapter(this,R.layout.layout_rowitem);
 		
 		listItems = (ListView) findViewById(R.id.listItem);
