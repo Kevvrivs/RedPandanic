@@ -28,9 +28,9 @@ public class GroupActivity extends Activity{
 		
 		//Initialize Connections
 		mClient = DbConnection.connectToAzureService(this);
-		txtGroupname = (EditText)findViewById(R.id.txtGroupName);
-		btnCreate = (Button) findViewById(R.id.btnCreate);
-		btnSearch = (Button) findViewById(R.id.btnSearch);
+		txtGroupname = (EditText)findViewById(R.id.txtSearchGroup);
+		btnCreate = (Button) findViewById(R.id.createButton);
+		btnSearch = (Button) findViewById(R.id.joinButton);
 		
 		btnCreate.setOnClickListener(new CreateGroupListener());
 	}
@@ -50,7 +50,8 @@ public class GroupActivity extends Activity{
 						ServiceFilterResponse service) {
 					// TODO Auto-generated method stub
 					if(exception == null){
-						Log.e("Message (group)", "Add group successful");
+						Log.e("Message (group)", "Add group successful" + item.getGroupId());
+						
 					} else {
 						Log.e("Message (group)", "Add group failed");
 					}

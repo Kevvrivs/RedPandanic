@@ -3,15 +3,15 @@ package Model;
 import java.util.ArrayList;
 
 public class Group {
-	private int groupId;
+	private String id;
 	private String name;
 	
 	
-	public int getGroupId() {
-		return groupId;
+	public String getGroupId() {
+		return id;
 	}
-	public void setGroupId(int groupId) {
-		this.groupId = groupId;
+	public void setGroupId(String groupId) {
+		this.id = groupId;
 	}
 	public String getName() {
 		return name;

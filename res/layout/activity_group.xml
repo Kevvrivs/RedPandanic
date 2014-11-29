@@ -4,97 +4,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/hekler"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical" >
-<<<<<<< HEAD
+    android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <EditText
-        android:id="@+id/txtGroupName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter group name"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/btnSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search" />
-
-    <Button
-        android:id="@+id/btnCreate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create" />
-=======
-    
-        <ImageView
+    <ImageView
         android:id="@+id/titleImage"
         android:layout_width="wrap_content"
         android:layout_height="240dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/descRep"
         android:src="@drawable/family" />
-        
-       <EditText
+
+    <EditText
         android:id="@+id/txtSearchGroup"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="5dp"
         android:background="#f8ede4"
-      	android:fontFamily="sans-serif-medium"  
-         android:layout_marginTop="5dp"
         android:ems="10"
+        android:fontFamily="sans-serif-medium"
         android:hint="Enter Group Name"
         android:inputType="text"
         android:labelFor="@id/txtSearchGroup"
         android:textColor="#363636"
-        android:textSize="18dp" 
-        >
-        
-           
+        android:textSize="18dp" >
+
         <requestFocus />
     </EditText>
-    
+
     <RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-        
-    <Button
-        android:id="@+id/joinButton"
-        android:layout_width="180dp"
-        android:layout_height="45dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/regbox"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/register"
-        android:textColor="#f8ede4"
-        android:textSize="18dp" />
-    
-    <Button
-        android:id="@+id/createButton"
-        android:layout_width="80dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/creativejoin"
-        android:textSize="18dp"
-      	android:fontFamily="sans-serif-medium"  
-        android:text="@string/login"
-        android:textColor="#f8ede4" />
-        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/joinButton"
+            android:layout_width="180dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/regbox"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/register"
+            android:textColor="#f8ede4"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/creativejoin"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/login"
+            android:textColor="#f8ede4"
+            android:textSize="18dp" />
     </RelativeLayout>
-           
-    
->>>>>>> 0e1f54e45495b9469ddec267b94f42c4ca638bb7
 
 </LinearLayout>

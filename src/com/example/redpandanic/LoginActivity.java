@@ -49,7 +49,7 @@ public class LoginActivity extends Activity {
 			String password = txtPassword.getText().toString();
 			
 			MobileServiceTable<Member> memberTable = mClient.getTable(Member.class);
-			
+			Log.e("HELLO", "IM IN");
 			memberTable.where().field("username").eq(username).and()
 			.field("password").eq(password)
 			.execute(new TableQueryCallback<Member>(){
@@ -68,10 +68,14 @@ public class LoginActivity extends Activity {
 							if(mem.getGroupId().equals("a")){
 								//Go to...
 								Log.e("WHERE","GO TO GROUP PAGE");
+								Intent i = new Intent(getApplicationContext(),GroupActivity.class);
+								startActivity(i);
 							}
 							else{
 								//Do something else
 								Log.e("WHERE","GO TO HOME");
+								Intent i = new Intent(getApplicationContext(),MenuActivity.class);
+								startActivity(i);
 							}
 						}
 					}
