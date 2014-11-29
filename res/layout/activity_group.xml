@@ -9,31 +9,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical" >
-<<<<<<< HEAD
-
-    <EditText
-        android:id="@+id/txtGroupName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter group name"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/btnSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search" />
-
-    <Button
-        android:id="@+id/btnCreate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create" />
-=======
     
         <ImageView
         android:id="@+id/titleImage"
@@ -69,19 +44,19 @@
         
     <Button
         android:id="@+id/joinButton"
-        android:layout_width="180dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="30dp"
         android:background="@drawable/regbox"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/register"
+        android:text="@string/groupJoin"
         android:textColor="#f8ede4"
         android:textSize="18dp" />
     
     <Button
         android:id="@+id/createButton"
-        android:layout_width="80dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="30dp"
@@ -89,12 +64,11 @@
         android:background="@drawable/creativejoin"
         android:textSize="18dp"
       	android:fontFamily="sans-serif-medium"  
-        android:text="@string/login"
+        android:text="@string/groupCreate"
         android:textColor="#f8ede4" />
         
     </RelativeLayout>
            
     
->>>>>>> 0e1f54e45495b9469ddec267b94f42c4ca638bb7
 
 </LinearLayout>
