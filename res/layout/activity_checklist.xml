@@ -13,36 +13,26 @@
 
     <EditText
         android:id="@+id/itemName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/borderbase"
-        android:hint="@string/itemname"
-        android:textSize="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#bebebe"
+        android:hint="Enter Your Budget"
+        android:textSize="18dp"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
-    <EditText
-         android:background="@drawable/borderbase"
-         android:layout_marginTop="3dp"
-        android:id="@+id/itemQty"
-        android:hint= "@string/quantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:ems="10" />
-
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="247dp"
-        android:layout_height="69dp"
-        android:layout_marginLeft="150dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="#15CAB1"
+        android:background="@drawable/creativejoin"
         android:gravity="center"
-        android:text="Add Items"
-        android:textSize="30dp" />
+        android:text="Get Supply Recommendation"
+        android:textColor="#f8ede4"
+        android:textSize="18dp" />
 
     <ListView
         android:id="@+id/listItem"

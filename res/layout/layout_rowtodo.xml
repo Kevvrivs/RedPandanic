@@ -7,7 +7,7 @@
  <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#BF0C43" >
+        android:background="@drawable/bgrev" >
 
         <CheckBox
             android:id="@+id/checkToDoComplete"
@@ -16,20 +16,19 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/borderbase" />
+            android:layout_marginTop="20dp" />
 
         <TextView
             android:id="@+id/textDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:textSize="35dp"
-            android:textColor="#fbf5e4"
-            android:layout_marginLeft="5dp"
-            android:text="TextView" />
+            android:layout_marginTop="20dp"
+            android:textSize="18dp"
+            android:textColor="#363636"
+            android:text="Plan of Action" />
 
     </LinearLayout>
 </LinearLayout>
