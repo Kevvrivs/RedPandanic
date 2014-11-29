@@ -16,6 +16,7 @@ import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
 import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
 
+import Adapter.ItemAdapter;
 import Database.DbConnection;
 import Model.Item;
 import Support.ItemTable;

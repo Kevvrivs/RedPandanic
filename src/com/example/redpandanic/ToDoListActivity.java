@@ -36,7 +36,7 @@ public class ToDoListActivity extends Activity{
 		
 		adapter = new WorkListAdapter(this,R.layout.layout_rowtodo);
 		
-		ListView WorkList = (ListView) findViewById(R.id.workList);
+		ListView WorkList = (ListView) findViewById(R.id.toDoListItem);
 		WorkList.setAdapter(adapter);
 		
 	}

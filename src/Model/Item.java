@@ -7,7 +7,7 @@ public class Item {
 	private double cost;
 	private double quantity;
 	private int importance;
-
+	private String groupId;
 	
 	public String getId() {
 		return id;
@@ -48,6 +48,16 @@ public class Item {
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
+
+	public String getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+	
+	
 	
 
 }

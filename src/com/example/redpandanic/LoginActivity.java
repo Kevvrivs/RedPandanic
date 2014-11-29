@@ -36,7 +36,7 @@ public class LoginActivity extends Activity {
 		btnRegister.setOnClickListener(new registerListener());
 		
 		btnLogin = (Button)findViewById(R.id.Login);
-		
+		btnLogin.setOnClickListener(new loginListener());
 		txtUsername = (EditText)findViewById(R.id.txtUser);
 		txtPassword = (EditText)findViewById(R.id.txtPassword);
 	}
@@ -47,6 +47,7 @@ public class LoginActivity extends Activity {
 		public void onClick(View v) {
 			String username = txtUsername.getText().toString();
 			String password = txtPassword.getText().toString();
+			
 			MobileServiceTable<Member> memberTable = mClient.getTable(Member.class);
 			
 			memberTable.where().field("username").eq(username).and()
@@ -56,7 +57,7 @@ public class LoginActivity extends Activity {
 				@Override
 				public void onCompleted(List<Member> member, int position,
 						Exception exception, ServiceFilterResponse response) {
-					if(exception!=null){
+					if(exception==null){
 						if (member.size() == 0) {
 							Log.e("Login","Failure");
 						}
@@ -64,11 +65,13 @@ public class LoginActivity extends Activity {
 							Log.e("Login","Success");
 							Member mem = member.get(0);
 							Log.e("Login",mem.getMemberId());
-							if(mem.getGroupId()==null){
+							if(mem.getGroupId().equals("a")){
 								//Go to...
+								Log.e("WHERE","GO TO GROUP PAGE");
 							}
 							else{
 								//Do something else
+								Log.e("WHERE","GO TO HOME");
 							}
 						}
 					}
