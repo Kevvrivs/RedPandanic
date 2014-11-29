@@ -31,5 +31,8 @@
 	<string name="addmember">Add a New Member</string>
 	<string name="enteruser">Enter a username</string>
 	<string name="reguserFullName">Full Name</string>
+	<string name="txtSearchGroup">Enter Group Name</string>
+	<string name="groupJoin">Join Groups</string>
+	<string name="groupCreate">Create Group</string>
 
 </resources>
