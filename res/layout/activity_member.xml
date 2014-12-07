@@ -6,35 +6,37 @@
     android:paddingTop="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:background="@drawable/pengu"
+       android:background="@drawable/normal"
     android:orientation="vertical" >
 
     <EditText
-        android:id="@+id/txtUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/borderbase"
+        android:id = "@+id/text"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textSize="18dp"
+        android:background="#bebebe"
         android:hint="@string/enteruser"
-         android:textSize="30dp"
         android:ems="10" />
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_marginTop="9dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#15CAB1"
-         android:textSize="30dp"
-        android:layout_gravity="center_horizontal"
+         android:layout_marginTop="10dp"
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+       android:background="@drawable/creativejoin"
+         android:textSize="18dp"
+         android:layout_alignLeft="@+id/toDoListItem"
+         android:layout_below="@+id/text"
+         android:textColor="#f8ede4"
         android:text="@string/addmember" />
 
     <ListView
         android:id="@+id/listMember"
-        android:background="@drawable/borderbase"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_marginTop="9dp">
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/borderbase"
+         android:layout_below="@+id/text"
+         android:layout_marginTop="9dp">
     </ListView>
 
 </LinearLayout>

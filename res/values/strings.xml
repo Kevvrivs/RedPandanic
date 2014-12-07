@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">pandapanic</string>
+    <string name="app_name">PrevKit</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login">PrevKit</string>
     <string name="itemname">Name of the Item</string>
     <string name="quantity">Specify quanitity of item</string>
     <string name="Add">Add the Plan</string>
