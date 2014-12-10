@@ -49,6 +49,16 @@ public class MenuActivity extends Activity{
 		});
 		
 		Button btnMember = (Button) findViewById(R.id.memberButton);
+		btnMember.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(),MemberActivity.class);
+				i.putExtra("user", user);
+				startActivity(i);
+			}
+			
+		});
 	
 		
 	}

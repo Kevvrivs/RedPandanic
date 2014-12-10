@@ -25,6 +25,7 @@ public class GroupActivity extends Activity{
 	private Button btnSearch;
 	private Member member;
 	private MobileServiceTable<Member> mMemberTable;
+	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_group);

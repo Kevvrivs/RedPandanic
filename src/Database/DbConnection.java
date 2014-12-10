@@ -13,10 +13,11 @@ public class DbConnection {
 		//String url = "https://pandabears.azure-mobile.net/";
 		//String key  = "BLHpgClAaVeLTPYTCNkUBJczvEJzVg75";
 		
+		//Kevin's
 		//String url = "https://prevkit.azure-mobile.net/";
 		//String key = "rXootnVHePtKaJRpTRSbqABoIdvzkE36";
-		String url = "https://redpandanic.azure-mobile.net/";
-		String key =  "bPMwoAaNznctNZORRuuNaUCioqHEsQ49";
+		String url = "https://prevkit.azure-mobile.net/";
+		String key =  "rXootnVHePtKaJRpTRSbqABoIdvzkE36";
 		
 		MobileServiceClient mClient = null; 
 		

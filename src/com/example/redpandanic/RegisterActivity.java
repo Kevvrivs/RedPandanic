@@ -19,6 +19,7 @@ import android.widget.EditText;
 
 public class RegisterActivity extends Activity{
 	private MobileServiceClient mClient;
+	private EditText txtFullname;
 	private EditText txtUsername;
 	private EditText txtPassword;
 	private EditText txtConfirmPassword;
@@ -32,6 +33,7 @@ public class RegisterActivity extends Activity{
 		
 		//Initialize Connections
 		mClient = DbConnection.connectToAzureService(this);
+		txtFullname = (EditText) findViewById(R.id.reguserFullName);
 		txtUsername = (EditText)findViewById(R.id.reguserText);
 		txtPassword = (EditText)findViewById(R.id.regpassText);
 		txtConfirmPassword = (EditText) findViewById(R.id.confpassText);
@@ -101,10 +103,17 @@ public class RegisterActivity extends Activity{
 		}
 		
 		public Member validateInput(){
+			String membername = txtFullname.getText().toString();
 			String username = txtUsername.getText().toString();
 			String password = txtPassword.getText().toString();
 			String confirmPassword = txtConfirmPassword.getText().toString();
 			String email = txtEmail.getText().toString();
+			statusMessage = "";
+			
+			if(membername.isEmpty()){
+				statusMessage += "Name field is required \n";
+				return null;
+			}
 			
 			if(username.isEmpty()){
 				statusMessage += "Username field is required \n";
@@ -122,14 +131,15 @@ public class RegisterActivity extends Activity{
 			}
 			
 			if(email.isEmpty()){
-				statusMessage += "Password required \n";
+				statusMessage += "Email is required \n";
 				return null;
 			}
 			statusMessage = "Successfully created an account";
-			return new Member(username,password,confirmPassword,email);
+			return new Member(membername,username,confirmPassword,email);
 		}
 		
 	}
 }
 
 
+ 

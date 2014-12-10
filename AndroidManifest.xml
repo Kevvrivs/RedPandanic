@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".ToDoListActivity" >
         </activity>
+        <activity android:name=".MemberActivity">
+        </activity>
         
     </application>
 

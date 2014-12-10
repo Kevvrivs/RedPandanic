@@ -32,7 +32,7 @@
 	<string name="enteruser">Enter a username</string>
 	<string name="reguserFullName">Full Name</string>
 	<string name="txtSearchGroup">Enter Group Name</string>
-	<string name="groupJoin">Join Groups</string>
+	<string name="groupJoin">Join Group</string>
 	<string name="groupCreate">Create Group</string>
 
 </resources>
