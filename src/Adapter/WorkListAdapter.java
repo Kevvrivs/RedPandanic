@@ -1,5 +1,8 @@
 package Adapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.example.redpandanic.R;
 
 import Model.WorkItem;
@@ -10,11 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class WorkListAdapter extends ArrayAdapter<WorkItem>{
 	Context mContext;
 	int mLayoutResourceId;
+	Spinner member;
 	
 	public WorkListAdapter(Context context, int layoutResourceId){
 		
@@ -27,18 +32,13 @@ public class WorkListAdapter extends ArrayAdapter<WorkItem>{
 	public View getView(int position, View convertView, ViewGroup parent){
 		View row = convertView;
 		final WorkItem currentItem = getItem(position);
-		
+
 		if (row == null) {
 			LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
 			row = inflater.inflate(mLayoutResourceId, parent, false);
 		}
-		
-		final CheckBox checkBox = (CheckBox) row.findViewById(R.id.checkToDoComplete);
 		final TextView  textDescription = (TextView) row.findViewById(R.id.textDescription);
-		checkBox.setChecked(false);
-		checkBox.setEnabled(true);
 		textDescription.setText(currentItem.getDescription());
-		
 		row.setTag(currentItem);
 		
 		return row;
