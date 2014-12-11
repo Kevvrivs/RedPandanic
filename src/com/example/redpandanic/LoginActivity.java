@@ -65,7 +65,7 @@ public class LoginActivity extends Activity {
 							Log.e("Login","Success");
 							Member mem = member.get(0);
 							Log.e("Login",mem.getMemberId());
-							if(mem.getGroupId().equals("a")){
+							if(mem.getGroupId().equals("none")){
 								//Go to...
 								Log.e("WHERE","GO TO GROUP PAGE");
 								Intent i = new Intent(getApplicationContext(),GroupActivity.class);

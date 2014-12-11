@@ -24,7 +24,7 @@ public class Member implements Serializable {
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.groupId = "a";
+		this.groupId = "none";
 	}
 	
 	public String getMemberId() {
