@@ -67,9 +67,11 @@ public class ItemRecommenderActivity extends Activity {
 			if(!value.isEmpty()){
 				money = Double.valueOf(txtQuantity.getText().toString());
 			}
-		
+			
+			
 			HashMap<String,Item> recommend = recommendItems(money,4);
-			Set<Entry<String,Item>> itSet = recommend.entrySet();	
+			Set<Entry<String,Item>> itSet = recommend.entrySet();
+			adapter.clear();
 			for(Entry<String,Item> item: itSet){
 				adapter.add(item.getValue());
 			}

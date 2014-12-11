@@ -118,30 +118,31 @@ public class RegisterActivity extends Activity{
 			String email = txtEmail.getText().toString();
 			statusMessage = "";
 			
-			if(membername.isEmpty()){
-				statusMessage += "Name field is required \n";
+			if(membername.isEmpty()||username.isEmpty()||password.isEmpty()||confirmPassword.isEmpty()||email.isEmpty()){
+				statusMessage += "Please fill out all fields. \n";
 				return null;
 			}
 			
-			if(username.isEmpty()){
-				statusMessage += "Username field is required \n";
+			if(!membername.matches("[a-zA-Z]+$")){
+				statusMessage += "Member name must only contain letters. \n";
 				return null;
 			}
 			
-			if(password.isEmpty()){
-				statusMessage += "Password field is required \n";
+			if(password.length()<6){
+				statusMessage += "Password must have at least 6 characters. \n";
 				return null;
 			}
 			
-			if(confirmPassword.isEmpty()||!confirmPassword.equals(password)){
-				statusMessage += "Confirm Password field is required \n";
+			if(!confirmPassword.equals(password)){
+				statusMessage += "Password fields do not match. \n";
 				return null;
 			}
 			
-			if(email.isEmpty()){
-				statusMessage += "Email is required \n";
+			if(!email.matches("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$")){
+				statusMessage += "Email is not valid. \n";
 				return null;
-			}
+			};
+			
 			statusMessage = "Successfully created an account";
 			return new Member(membername,username,confirmPassword,email);
 		}
