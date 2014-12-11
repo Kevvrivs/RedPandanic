@@ -44,6 +44,9 @@ public class MemberActivity extends Activity {
 
 	}
 
+	public void clearFields(){
+		username.setText("");
+	}
 	public void getMembers() {
 
 		mClient.getTable(Member.class).where().field("groupId")
@@ -90,6 +93,7 @@ public class MemberActivity extends Activity {
 							} else {
 
 							}
+							clearFields();
 
 						}
 

@@ -59,6 +59,33 @@ public class MenuActivity extends Activity{
 			}
 			
 		});
+		
+		Button btnInventory = (Button) findViewById(R.id.inventoryButton);
+		btnInventory.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(),InventoryActivity.class);
+				i.putExtra("user", user);
+				startActivity(i);
+			}
+			
+			
+		});
+		
+		Button btnLogout = (Button) findViewById(R.id.logoutButton);
+		btnLogout.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				user = null;
+				Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+				startActivity(i);
+				
+			}
+			
+		});
 	
 		
 	}

@@ -40,6 +40,10 @@ public class GroupActivity extends Activity{
 		btnCreate.setOnClickListener(new CreateGroupListener());
 	}
 	
+	public void clearFields(){
+		txtGroupname.setText("");
+	}
+	
 	class CreateGroupListener implements OnClickListener {
 
 		@Override
@@ -56,6 +60,7 @@ public class GroupActivity extends Activity{
 					// TODO Auto-generated method stub
 					if(exception == null){
 						Log.e("Message (group)", "Add group successful" + item.getGroupId());
+						clearFields();
 						member.setGroupId(item.getGroupId());
 						
 						mMemberTable = mClient.getTable(Member.class);

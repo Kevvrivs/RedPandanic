@@ -47,6 +47,14 @@ public class RegisterActivity extends Activity{
 		
 	}
 	
+	public void clearFields(){
+		txtFullname.setText("");
+		txtUsername.setText("");
+		txtPassword.setText("");
+		txtConfirmPassword.setText("");
+		txtEmail.setText("");
+	}
+	
 	public AlertDialog createDialog(){
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setMessage(statusMessage);
@@ -79,7 +87,7 @@ public class RegisterActivity extends Activity{
 						if(exception==null){
 							createDialog().show();
 							Log.e("Register", "Success");
-							
+							clearFields();
 							//Go to next activity
 						
 							Intent i = new Intent(getApplicationContext(),GroupActivity.class);

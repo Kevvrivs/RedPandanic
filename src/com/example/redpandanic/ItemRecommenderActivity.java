@@ -52,20 +52,28 @@ public class ItemRecommenderActivity extends Activity {
 	
 	}
 
-	
+	public void clearFields(){
+		txtQuantity.setText("");
+	}
 	class RecommendListener implements OnClickListener {
 
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Log.e("Money", txtQuantity.getText().toString());
-			Double money = Double.valueOf(txtQuantity.getText().toString());
+			String value = txtQuantity.getText().toString();
+			
+			Double money = 0.0;
+			if(!value.isEmpty()){
+				money = Double.valueOf(txtQuantity.getText().toString());
+			}
 		
 			HashMap<String,Item> recommend = recommendItems(money,4);
 			Set<Entry<String,Item>> itSet = recommend.entrySet();	
 			for(Entry<String,Item> item: itSet){
 				adapter.add(item.getValue());
 			}
+			clearFields();
 		}
 		
 		public HashMap<String,Item> recommendItems(double money, int numOfMember){

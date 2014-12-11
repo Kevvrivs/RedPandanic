@@ -25,13 +25,14 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/quantityText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:background="#bebebe"
         android:ems="10"
         android:hint="Quantity (Number - Measurement)"
+        android:inputType="number"
         android:textSize="18dp" />
     
     </LinearLayout>
@@ -50,10 +51,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     	<EditText
-        android:id="@+id/editText2"
+        android:id="@+id/itemText"
         android:layout_width="fill_parent"
         android:layout_marginLeft="10dp"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:background="#bebebe"
         android:layout_height="wrap_content"
         android:hint = "Name of Item"
@@ -79,14 +80,15 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     	<EditText
-        android:id="@+id/editText3"
-        android:layout_width="fill_parent"
-        android:layout_marginLeft="10dp"
-        android:textSize="18dp"
-        android:background="#bebebe"
-        android:layout_height="wrap_content"
-        android:hint = "Price"
-        android:ems="10" >
+    	    android:id="@+id/costText"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_marginLeft="10dp"
+    	    android:background="#bebebe"
+    	    android:ems="10"
+    	    android:hint="Price"
+    	    android:inputType="number"
+    	    android:textSize="18dp" >
         
     	<requestFocus />
     	</EditText>
