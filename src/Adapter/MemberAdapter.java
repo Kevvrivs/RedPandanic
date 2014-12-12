@@ -2,7 +2,6 @@ package Adapter;
 
 import org.dlsunetcentriclab.redpandanic.R;
 
-
 import Model.Member;
 import android.app.Activity;
 import android.content.Context;
