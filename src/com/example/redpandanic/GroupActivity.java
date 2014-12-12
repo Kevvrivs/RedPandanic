@@ -1,6 +1,7 @@
 package com.example.redpandanic;
 
 import java.util.List;
+
 import org.dlsunetcentriclab.redpandanic.R;
 
 import com.example.redpandanic.RegisterActivity.RegisterListener;
@@ -13,6 +14,8 @@ import com.microsoft.windowsazure.mobileservices.TableQueryCallback;
 import Database.DbConnection;
 import Model.Group;
 import Model.Member;
+import Model.WorkItem;
+import Support.DisasterPlanSample;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -79,9 +82,6 @@ public class GroupActivity extends Activity{
 			@Override
 			public void onCompleted(List<Group> groups, int arg1, Exception exception,
 					ServiceFilterResponse response) {
-				// TODO Auto-generated method stub
-			
-				
 			}
 			
 		});
@@ -154,8 +154,22 @@ public class GroupActivity extends Activity{
 					if(exception == null){
 						Log.e("Message (group)", "Add group successful" + item.getGroupId());
 						clearFields();
-						member.setGroupId(item.getGroupId());
 						
+						
+						DisasterPlanSample template = new DisasterPlanSample();
+						
+						for(WorkItem i:template.getPlans()){
+							i.setGroupId(item.getGroupId());
+							mClient.getTable(WorkItem.class).insert(i, new TableOperationCallback<WorkItem>(){
+								public void onCompleted(WorkItem work,Exception exception2,ServiceFilterResponse response2) {
+									if(exception2==null){
+										Log.e("Add Work Item", "Success");
+									}
+								}
+							});
+						}
+						
+						member.setGroupId(item.getGroupId());
 						mMemberTable = mClient.getTable(Member.class);
 						mMemberTable.update(member, new TableOperationCallback<Member>(){
 
@@ -165,7 +179,7 @@ public class GroupActivity extends Activity{
 								// TODO Auto-generated method stub
 								if(exception==null){
 									Log.e("Message Update", "Update is successful");
-									createDialog("Succesfully created group " + item.getName()).show();
+									createDialog("Succesfully created group " + item.getName()).show();	
 									Intent i = new Intent(getApplicationContext(),MenuActivity.class);
 									i.putExtra("user", member);
 									startActivity(i);

@@ -20,31 +20,31 @@ public class DisasterPlanSample {
 	public void fillData(){
 		WorkItem item = new WorkItem();
 		item.setDescription("Prepare the important documents");
+		item.setMemberId("null");
 		item.setDone(false);
 		plans.add(item);
 		
 		item = new WorkItem();
 		item.setDescription("Prepare the emergency kits");
-		item.setDone(false);
-		plans.add(item);
-		
-		item = new WorkItem();
-		item.setDescription("Prepare the emergency kits");
+		item.setMemberId("null");
 		item.setDone(false);
 		plans.add(item);
 		
 		item = new WorkItem();
 		item.setDescription("Turn off the electricity");
+		item.setMemberId("null");
 		item.setDone(false);
 		plans.add(item);
 		
 		item = new WorkItem();
 		item.setDescription("Turn off the gas stove");
+		item.setMemberId("null");
 		item.setDone(false);
 		plans.add(item);
 		
 		item = new WorkItem();
 		item.setDescription("Prepare your pet's food and medicine");
+		item.setMemberId("null");
 		item.setDone(false);
 		plans.add(item);
 	}
