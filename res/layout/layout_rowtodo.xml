@@ -7,25 +7,44 @@
  <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#f8ede4"
-        android:orientation="horizontal" >
+        android:background="@drawable/rowbg"
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/textDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
             android:textSize="18dp"
             android:textColor="#363636"
             android:text="Plan of Action" />
+                
+            <TextView
+            android:id="@+id/textAssigned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textColor="#363636"
+            android:text="Assigned to:" />
+            
+            <TextView
+            android:id="@+id/textMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="18dp"
+            android:textColor="#363636"
+            android:text="Member Name" />
         
-       <Spinner
-        android:id="@+id/spinnerMember"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        
 
     </LinearLayout>
+    
 </LinearLayout>

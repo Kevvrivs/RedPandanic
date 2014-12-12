@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/normal"
@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation = "vertical"
     tools:context="com.example.pandapanic.ToDoListActivity" >
     
     <EditText
@@ -17,17 +18,23 @@
         android:background="#bebebe"
         android:hint="@string/desc" />
     
-     <ListView
-         android:id="@+id/toDoListItem"
+               <TextView
+            android:id="@+id/textChooser"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textColor="#363636"
+            android:text="Choose a Member:" />
+    
+        <Spinner
+         android:id="@+id/spinnerChooser"
          android:layout_width="fill_parent"
-         android:layout_height="wrap_content"
-         android:background="@drawable/borderbase"
-         android:layout_below="@+id/text"
-         android:layout_marginTop="70dp" >
-
-    </ListView>
-
-     <Button
+         android:layout_height="50dp"
+          android:background="#bebebe"
+         android:layout_marginTop="10dp" />
+        
+        <Button
          android:id="@+id/btnAdd"
          android:layout_marginTop="10dp"
          android:layout_width="match_parent"
@@ -39,4 +46,17 @@
          android:textColor="#f8ede4"
          android:text="@string/Add" />
 
-</RelativeLayout>
+     <ListView
+         android:id="@+id/toDoListItem"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/borderbase"
+         android:layout_below="@+id/text"
+         android:layout_marginTop="10dp" >
+
+    </ListView>
+
+
+
+
+</LinearLayout>
