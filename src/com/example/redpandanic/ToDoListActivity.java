@@ -11,6 +11,7 @@ import com.microsoft.windowsazure.mobileservices.TableQueryCallback;
 
 import Adapter.WorkListAdapter;
 import Database.DbConnection;
+import Model.Group;
 import Model.Member;
 import Model.WorkItem;
 import android.app.Activity;
@@ -21,6 +22,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +38,8 @@ public class ToDoListActivity extends Activity {
 	private Member member;
 	private Spinner spinner;
 	private ArrayAdapter<String> spinnerAdapter;
+	private String selectedMember;
+	//private String userId;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -51,6 +56,8 @@ public class ToDoListActivity extends Activity {
 		spinner = (Spinner)findViewById(R.id.spinnerChooser);
 		spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
 		spinner.setAdapter(spinnerAdapter);
+		spinner.setSelection(0);
+		selectedMember = spinner.getItemAtPosition(0).toString();
 		getMembers();
 
 		ListView WorkList = (ListView) findViewById(R.id.toDoListItem);
@@ -118,6 +125,22 @@ public class ToDoListActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	class SpinnerListener implements OnItemSelectedListener{
+
+		@Override
+		public void onItemSelected(AdapterView<?> parent, View view,
+				int position, long id) {
+			selectedMember = parent.getItemAtPosition(position).toString();
+		}
+
+		@Override
+		public void onNothingSelected(AdapterView<?> parent) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
 
 	class AddListListener implements OnClickListener {
 
@@ -127,7 +150,23 @@ public class ToDoListActivity extends Activity {
 			work.setDescription(desc);
 			work.setDone(false);
 			work.setGroupId(member.getGroupId());
-			work.setMemberId("null");
+			
+			/*
+			mClient.getTable(Member.class).where().field("username").eq(selectedMember).execute(new TableQueryCallback<Member>(){
+
+				@Override
+				public void onCompleted(List<Member> members, int position,
+						Exception exception, ServiceFilterResponse response) {
+					
+					if(exception==null){
+						Member m = members.get(0);
+						userId = m.getMemberId();
+					}
+				}
+			});*/
+			
+			work.setMemberId(selectedMember);
+			
 			mClient.getTable(WorkItem.class).insert(work,
 					new TableOperationCallback<WorkItem>() {
 

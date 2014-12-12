@@ -39,6 +39,8 @@ public class WorkListAdapter extends ArrayAdapter<WorkItem>{
 		}
 		final TextView  textDescription = (TextView) row.findViewById(R.id.textDescription);
 		textDescription.setText(currentItem.getDescription());
+		final TextView textAssigned = (TextView) row.findViewById(R.id.textAssigned);
+		textAssigned.setText(currentItem.getMemberId());
 		row.setTag(currentItem);
 		
 		return row;

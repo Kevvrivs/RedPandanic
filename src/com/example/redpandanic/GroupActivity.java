@@ -11,6 +11,7 @@ import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
 import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
 import com.microsoft.windowsazure.mobileservices.TableQueryCallback;
 
+import Adapter.GroupAdapter;
 import Database.DbConnection;
 import Model.Group;
 import Model.Member;
@@ -36,8 +37,8 @@ public class GroupActivity extends Activity{
 	private Button btnCreate;
 	private Button btnSearch;
 	private ListView groupList;
-	private ArrayAdapter groupAdapter;
-	private List<String> groups;
+	private GroupAdapter groupAdapter;
+	//private List<String> groups;
 	private Member member;
 	private MobileServiceTable<Member> mMemberTable;
 	
@@ -54,6 +55,9 @@ public class GroupActivity extends Activity{
 		btnCreate.setOnClickListener(new CreateGroupListener());
 		btnSearch.setOnClickListener(new JoinGroupListener());
 		groupList = (ListView) findViewById(R.id.groupList);
+		groupAdapter = new GroupAdapter(this,R.layout.layout_rowgroupxml);
+		groupList.setAdapter(groupAdapter);
+		getGroups();
 		//adapter = new ArrayAdapter();
 	}
 	
@@ -82,6 +86,11 @@ public class GroupActivity extends Activity{
 			@Override
 			public void onCompleted(List<Group> groups, int arg1, Exception exception,
 					ServiceFilterResponse response) {
+				if(exception==null){
+					for(Group g:groups){
+						groupAdapter.add(g);
+					}
+				}
 			}
 			
 		});
