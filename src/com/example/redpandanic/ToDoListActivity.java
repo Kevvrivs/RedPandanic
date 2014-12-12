@@ -1,6 +1,7 @@
 package com.example.redpandanic;
 
 import java.util.List;
+
 import org.dlsunetcentriclab.redpandanic.R;
 
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
@@ -20,9 +21,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 public class ToDoListActivity extends Activity {
 	private MobileServiceClient mClient;
@@ -30,6 +33,8 @@ public class ToDoListActivity extends Activity {
 	private Button btnAdd;
 	private WorkListAdapter adapter;
 	private Member member;
+	private Spinner spinner;
+	private ArrayAdapter<String> spinnerAdapter;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,6 +47,11 @@ public class ToDoListActivity extends Activity {
 		btnAdd = (Button) findViewById(R.id.btnAdd);
 		btnAdd.setOnClickListener(new AddListListener());
 		adapter = new WorkListAdapter(this, R.layout.layout_rowtodo);
+		
+		spinner = (Spinner)findViewById(R.id.spinnerChooser);
+		spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+		spinner.setAdapter(spinnerAdapter);
+		getMembers();
 
 		ListView WorkList = (ListView) findViewById(R.id.toDoListItem);
 		WorkList.setAdapter(adapter);
@@ -79,6 +89,23 @@ public class ToDoListActivity extends Activity {
 
 				});
 
+	}
+	
+	public void getMembers(){
+		mClient.getTable(Member.class).where().field("groupId")
+		.eq(member.getGroupId())
+		.execute(new TableQueryCallback<Member>() {
+
+			public void onCompleted(List<Member> members, int count,
+					Exception exception, ServiceFilterResponse response) {
+				
+				if (exception == null) {
+					for(Member m:members){
+						spinnerAdapter.add(m.getUsername());
+					}
+				}
+			}
+		});
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
