@@ -1,7 +1,7 @@
 package Adapter;
 
-import com.example.redpandanic.R;
-import com.example.redpandanic.R.id;
+import org.dlsunetcentriclab.redpandanic.R;
+
 
 import Model.Member;
 import android.app.Activity;

@@ -3,7 +3,7 @@ package Adapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.redpandanic.R;
+import org.dlsunetcentriclab.redpandanic.R;
 
 import Model.WorkItem;
 import android.app.Activity;

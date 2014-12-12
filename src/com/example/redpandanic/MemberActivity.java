@@ -1,6 +1,7 @@
 package com.example.redpandanic;
 
 import java.util.List;
+import org.dlsunetcentriclab.redpandanic.R;
 
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;

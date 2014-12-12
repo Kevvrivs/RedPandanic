@@ -15,7 +15,7 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-import com.example.redpandanic.R;
+import org.dlsunetcentriclab.redpandanic.R;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
 import com.microsoft.windowsazure.mobileservices.TableOperationCallback;

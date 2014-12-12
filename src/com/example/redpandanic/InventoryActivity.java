@@ -4,6 +4,7 @@ import com.example.redpandanic.GroupActivity.CreateGroupListener;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
 import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
+import org.dlsunetcentriclab.redpandanic.R;
 
 import Adapter.InventoryAdapter;
 import Adapter.ItemAdapter;

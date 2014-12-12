@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.example.redpandanic.R;
+import org.dlsunetcentriclab.redpandanic.R;
 
 public class InventoryAdapter extends ArrayAdapter<Item>{
 	/**
