@@ -24,35 +24,7 @@
         android:gravity="center"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/checklistButton"
-            android:layout_width="fill_parent"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/regbox"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/checklist"
-            android:textColor="#f8ede4"
-            android:textSize="18dp" />
-
-        <ImageView
-            android:id="@+id/checkMenu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/menuborder"
-            android:src="@drawable/note" />
-    </RelativeLayout>
-
+    
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -79,6 +51,35 @@
             android:layout_alignParentTop="true"
             android:background="@drawable/menuborder"
             android:src="@drawable/map" />
+    </RelativeLayout>
+    
+        <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/checklistButton"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/regbox"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/checklist"
+            android:textColor="#f8ede4"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/checkMenu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/menuborder"
+            android:src="@drawable/note" />
     </RelativeLayout>
 
     <RelativeLayout

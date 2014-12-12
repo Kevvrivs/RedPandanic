@@ -20,10 +20,10 @@
 	<string name="register">REGISTER</string>
 	<string name="descRep">aaaa</string>
 	<string name="title_activity_register">Register</string>
-	<string name="checklist">CHECKLIST</string>
+	<string name="checklist">ITEM RECOMMENDATION</string>
 	<string name="disasterplan">DISASTER PLAN</string>
 	<string name="inventory">INVENTORY</string>
-	<string name="member">MEMBERS</string>
+	<string name="member">GROUP MEMBERS</string>
 	<string name="emergency">EMERGENCY CONTACTS</string>
 	<string name="title_activity_menu">Main Menu</string>
 	<string name="logout">LOG OUT</string>

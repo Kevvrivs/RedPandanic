@@ -13,16 +13,32 @@
     <ImageView
         android:id="@+id/titleImage"
         android:layout_width="wrap_content"
-        android:layout_height="240dp"
+        android:layout_height="120dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/descRep"
         android:src="@drawable/family" />
+
+   <TextView
+        android:id="@+id/textHelp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Existing Groups"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <ListView
+         android:id="@+id/groupList"
+         android:layout_width="fill_parent"
+         android:layout_height="100dp"
+         android:background="@drawable/borderbase"
+         android:layout_marginTop="10dp" >
+
+    </ListView>
 
     <EditText
         android:id="@+id/txtSearchGroup"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:background="#f8ede4"
         android:ems="10"
         android:fontFamily="sans-serif-medium"
