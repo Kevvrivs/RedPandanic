@@ -16,12 +16,15 @@ import org.dlsunetcentriclab.redpandanic.R;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
 import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
+import com.microsoft.windowsazure.mobileservices.TableQueryCallback;
 
 import Adapter.ItemAdapter;
 import Database.DbConnection;
 import Model.Item;
+import Model.Member;
 import Support.ItemTable;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,11 +39,14 @@ public class ItemRecommenderActivity extends Activity {
 	private ListView listItems;
 	private EditText txtQuantity;
 	private Button btnEdit;
-	
+	private Member user;
+	private int memberCount;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checklist);
 		mClient = DbConnection.connectToAzureService(this);
+		Intent i = getIntent();
+		user = (Member) i.getSerializableExtra("user");
 		btnEdit = (Button) findViewById(R.id.btnAdd);
 		btnEdit.setOnClickListener(new RecommendListener());
 		txtQuantity = (EditText) findViewById(R.id.itemName);
@@ -48,29 +54,42 @@ public class ItemRecommenderActivity extends Activity {
 		
 		listItems = (ListView) findViewById(R.id.listItem);
 		listItems.setAdapter(adapter);
-		
-
-	
+		memberCount = 1;
 	}
 
 	public void clearFields(){
 		txtQuantity.setText("");
+	}
+	
+	public void getMemberCount(){
+		mClient.getTable(Member.class).where().field("groupId").eq(user.getGroupId()).execute(new TableQueryCallback<Member>(){
+
+			@Override
+			public void onCompleted(List<Member> member, int position,
+					Exception exception, ServiceFilterResponse response) {
+				// TODO Auto-generated method stub
+				if(exception == null){
+					memberCount = member.size();
+				}
+				
+			}
+			
+		});
 	}
 	class RecommendListener implements OnClickListener {
 
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Log.e("Money", txtQuantity.getText().toString());
 			String value = txtQuantity.getText().toString();
-			
+			getMemberCount();
 			Double money = 0.0;
 			if(!value.isEmpty()){
 				money = Double.valueOf(txtQuantity.getText().toString());
 			}
 			
 			
-			HashMap<String,Item> recommend = recommendItems(money,4);
+			HashMap<String,Item> recommend = recommendItems(money,memberCount);
 			Set<Entry<String,Item>> itSet = recommend.entrySet();
 			adapter.clear();
 			for(Entry<String,Item> item: itSet){
