@@ -13,6 +13,7 @@ import Model.WorkItem;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -85,11 +86,11 @@ public class MemberActivity extends Activity {
 								ServiceFilterResponse response) {
 
 							if (exception == null) {
-								if (count == 0) {
-									// show a message dialog here
-								} else {
-									memberAdapter.add(members.get(0));
-								}
+								Member selectedMember = members.get(0);
+								Log.e("Members", "Successfully added " + selectedMember.getMemberName());
+								memberAdapter.add(members.get(0));
+								
+								
 							} else {
 
 							}

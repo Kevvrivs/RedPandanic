@@ -20,14 +20,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 public class GroupActivity extends Activity{
 	private MobileServiceClient mClient;
 	private EditText txtGroupname;
 	private Button btnCreate;
 	private Button btnSearch;
+	private ListView groupList;
+	private ArrayAdapter groupAdapter;
+	private List<String> groups;
 	private Member member;
 	private MobileServiceTable<Member> mMemberTable;
 	
@@ -41,9 +47,10 @@ public class GroupActivity extends Activity{
 		txtGroupname = (EditText)findViewById(R.id.txtSearchGroup);
 		btnCreate = (Button) findViewById(R.id.createButton);
 		btnSearch = (Button) findViewById(R.id.joinButton);
-		
 		btnCreate.setOnClickListener(new CreateGroupListener());
 		btnSearch.setOnClickListener(new JoinGroupListener());
+		groupList = (ListView) findViewById(R.id.groupList);
+		//adapter = new ArrayAdapter();
 	}
 	
 	public void clearFields(){
@@ -63,6 +70,20 @@ public class GroupActivity extends Activity{
 		
 		});
 		return alertDialogBuilder.create();
+	}
+	
+	public void getGroups(){
+		mClient.getTable(Group.class).execute(new TableQueryCallback<Group>(){
+
+			@Override
+			public void onCompleted(List<Group> groups, int arg1, Exception exception,
+					ServiceFilterResponse response) {
+				// TODO Auto-generated method stub
+			
+				
+			}
+			
+		});
 	}
 	
 	class JoinGroupListener implements OnClickListener{
